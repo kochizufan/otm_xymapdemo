@@ -97,7 +97,6 @@ $(function(){
 	);
 	map2.addLayer(xyMapLayer);
 	map2.fitBounds([map2.xy2ll(map2SW),map2.xy2ll(map2NE)]);
-	
 
 });
 
