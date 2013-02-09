@@ -98,9 +98,6 @@ $(function(){
 	map2.addLayer(xyMapLayer);
 	map2.fitBounds([map2.xy2ll(map2SW),map2.xy2ll(map2NE)]);
 	
-	map2.on("click",function(e){
-		alert(map2.ll2xy(e.latlng));
-	});
 
 });
 
