@@ -86,17 +86,21 @@ $(function(){
 	
 	var xyMapUrl = "http://t.saesparam.com/edit/e2439add-4002-48e8-805e-7944d553a9bd/e2439add-4002-48e8-805e-7944d553a9bd-{z}_{x}_{y}.png",
 	xyMapAttr = 'Hogehoge';
-	var xyMapLayer = new xyLayer(xyMapUrl,{minZoom: 0, maxZoom: 6, attribution: xyMapAttr});
+	var xyMapLayer = new xyLayer(xyMapUrl,{minZoom: 0, maxZoom: map2MaxZoom, attribution: xyMapAttr});
 	map2 = new myMap('map2',
 	{
 		crs:myCrs,
 		minZoom:0,
-		maxZoom:6,
-		maxPixelSize: 256 * (1 << 6)
+		maxZoom:map2MaxZoom,
+		maxPixelSize: 256 * (1 << map2MaxZoom)
 	}
 	);
 	map2.addLayer(xyMapLayer);
 	map2.fitBounds([map2.xy2ll(map2SW),map2.xy2ll(map2NE)]);
+	
+	map2.on("click",function(e){
+		alert(map2.ll2xy(e.latlng));
+	});
 
 });
 
