@@ -105,8 +105,8 @@ function isArray(o){
 }
 
 function set100Pct(){
-	var dw = $(window).width();
-	var dh = $(window).height();
+	var dw = $(window).width() - 2;
+	var dh = $(window).height() - 2;
 	$("#main").css({width:dw + "px",height:dh + "px"});
 	if (map1){
 		map1.invalidateSize();
